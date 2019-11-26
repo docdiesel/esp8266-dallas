@@ -35,7 +35,7 @@
 #include <DallasTemperature.h>
 
 
-//==== config section===================
+//==== config section ===================
 
 #define timer_millis 10000
 
@@ -44,6 +44,8 @@
 
 // GPIO where the DS18B20 is connected to
 #define GPIO_oneWireBus 4
+
+
 
 //==== global objects ========
 ESPBASE Esp;
@@ -75,6 +77,7 @@ char hx[18];
 #include "webhandlers.h"
 
 
+//==== fire up your engines ... ====
 void setup() {
   Serial.begin(115200);     // init serial
   Esp.initialize();         // init ESPbase
@@ -99,6 +102,7 @@ void setup() {
   timer = millis();
 }
 
+//==== Run, Forrest, run! ====
 void loop() {
   //-- ESPbase routines first
   ArduinoOTA.handle();        // OTA request handling
@@ -110,6 +114,12 @@ void loop() {
   if (millis() > timer + timer_millis) 
   {
     timer = millis();
-    Serial.println("This would be the cronned Fnord.");
+    cronned_code();
   }
+}
+
+
+//==== got some code to execute every few seconds? ====
+void cronned_code(){
+  Serial.println("This would be the cronned Fnord.");
 }
