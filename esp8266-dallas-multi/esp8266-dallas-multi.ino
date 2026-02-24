@@ -18,7 +18,25 @@
  * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * --------
+ *
+ * !!! IMPORTANT !!!
  * 
+ * (1) This sketch makes use of Pedroalbuquerque's ESPBASE which itself relies on some
+ * other libraries written by him. To make the sketch compile, execute the following
+ * commands to clone the following repositories into you libraries/ folder:
+ * 
+ *   git clone https://github.com/Pedroalbuquerque/ESPBASE.git
+ *   git clone https://github.com/Pedroalbuquerque/DebugTools.git
+ *   git clone https://github.com/Pedroalbuquerque/PACharTools.git
+ *   git clone https://github.com/Pedroalbuquerque/PACRC32.git
+ *
+ * (2) If compiling with Arduino v1.8.9 (Snap) on Ubuntu Jammy 22.04 and your board
+ * is an ESP8266, then you have to install max. v3.0.2 of its board library due
+ * to python version mismatches.
+ * See: https://forum.arduino.cc/t/arduino-2-0-rc-3-nodemcu-compile-cant-find-python3/946670/4
+ *
  * --------
  * This piece of code was inspired by & thanks to thre authors of:
  *  - https://randomnerdtutorials.com/esp8266-ds18b20-temperature-sensor-web-server-with-arduino-ide/
@@ -123,3 +141,4 @@ void loop() {
 void cronned_code(){
   Serial.println("This would be the cronned Fnord.");
 }
+
